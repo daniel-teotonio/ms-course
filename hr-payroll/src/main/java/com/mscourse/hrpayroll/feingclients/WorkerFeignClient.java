@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Component
+//Chamando o outro serviço descoberto apenas pelo nome
 @FeignClient(name = "hr-worker", path = "/workers")
 public interface WorkerFeignClient {
     @GetMapping(value = "/{id}")
