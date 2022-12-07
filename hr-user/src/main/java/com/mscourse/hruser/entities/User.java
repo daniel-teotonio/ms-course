@@ -16,7 +16,10 @@ public class User implements Serializable {
     private Long id;
 
     private String name;
+
+    @Column(unique = true)//email não vai se repetir
     private String email;
+
     private String password;
 
     @ManyToMany(fetch = FetchType.EAGER)//Os dados dos roles devem ser carregados junto com o do user
